@@ -2,6 +2,12 @@
     color: white;
     margin-left: 20px;
 }
+.Player{
+    display: flex;
+    margin-left: 300px;
+    width: 100%;
+    padding: 20px;
+}
 .row___posters{
     display: flex;
     overflow-y: hidden;
