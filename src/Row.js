@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from './axios';
 import "./Row.css";
 import movieTrailer from "movie-trailer";
-import YouTube from "react-youtube";
+//import YouTube from "react-youtube";
 import ReactPlayer from "react-player";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
@@ -20,14 +20,6 @@ function Row({title,fetchUrl, isLargeRow}) {
         fetchData();
     },[fetchUrl]); //[] is thr dependency, basically on which it depends, so if that changes it reloads. currently is blank so means
            // it changes only when page is reloaded i.e. only once, but if entered movies, so movies change this changes.
-           const opts = {
-            height: '390',
-            width: "100%",
-            playerVars: {
-              // https://developers.google.com/youtube/player_parameters
-              autoplay: 1,
-            }
-        };
         const handleClickClose =() =>{
             setTrailerUrl("");
         };
