@@ -4,7 +4,6 @@ import requests from './requests';
 import './Banner.css';
 function Banner() {
     const [movie,setMovie] = useState([]);
-    const [trailerUrl,setTrailerUrl] = useState("");
     useEffect(()=>{
         async function fetchData(){
             const request = await axios.get(requests.fetchTrending);
