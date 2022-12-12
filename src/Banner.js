@@ -4,9 +4,10 @@ import requests from './requests';
 import './Banner.css';
 function Banner() {
     const [movie,setMovie] = useState([]);
+    const [trailerUrl,setTrailerUrl] = useState("");
     useEffect(()=>{
         async function fetchData(){
-            const request = await axios.get(requests.fetchNetflixOriginals);
+            const request = await axios.get(requests.fetchTrending);
             setMovie(request.data.results[Math.floor(Math.random()*request.data.results.length-1)]);    
             console.table(request.data.results[Math.floor(Math.random()*request.data.results.length-1)]);
         }
@@ -41,9 +42,8 @@ function Banner() {
             <h1 className='banner___description'>
                 {truncate(movie?.overview,150)}
             </h1>
+            <div className="banner--fadeBottom"></div>
         </div>
-        <div className="banner--fadeBottom"></div>
-        
     </header>
   )
 }
